@@ -2506,7 +2506,43 @@ pub fn rustdesk_interval(i: Interval) -> ThrottledInterval {
     ThrottledInterval::new(i)
 }
 
+/// RAYLINK: built-in branding and private server settings.
+/// Clients built from this fork always use Ali's private server only.
+pub const RAYLINK_SERVER: &str = "45.11.186.14";
+pub const RAYLINK_KEY: &str = "xlDDtFniZQ2AY1woZakq4YuHTpcBxxnPYknJSH100ZM=";
+
+fn load_raylink_builtin() {
+    *config::APP_NAME.write().unwrap() = "RAYLINK".to_owned();
+    {
+        let mut o = config::OVERWRITE_SETTINGS.write().unwrap();
+        o.insert("custom-rendezvous-server".to_owned(), RAYLINK_SERVER.to_owned());
+        o.insert("relay-server".to_owned(), RAYLINK_SERVER.to_owned());
+        o.insert("key".to_owned(), RAYLINK_KEY.to_owned());
+        o.insert("allow-auto-update".to_owned(), "N".to_owned());
+        o.insert("enable-check-update".to_owned(), "N".to_owned());
+    }
+    {
+        let mut o = config::OVERWRITE_LOCAL_SETTINGS.write().unwrap();
+        o.insert("enable-check-update".to_owned(), "N".to_owned());
+    }
+    {
+        let mut d = config::DEFAULT_LOCAL_SETTINGS.write().unwrap();
+        d.insert("lang".to_owned(), "fa".to_owned());
+    }
+    {
+        let mut b = config::BUILTIN_SETTINGS.write().unwrap();
+        for k in [
+            "hide-server-settings",
+            "hide-help-cards",
+            "hide-powered-by-me",
+        ] {
+            b.insert(k.to_owned(), "Y".to_owned());
+        }
+    }
+}
+
 pub fn load_custom_client() {
+    load_raylink_builtin();
     #[cfg(debug_assertions)]
     if let Ok(data) = std::fs::read_to_string("./custom.txt") {
         read_custom_client(data.trim());

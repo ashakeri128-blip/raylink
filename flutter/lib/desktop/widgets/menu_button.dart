@@ -40,7 +40,7 @@ class _MenuButtonState extends State<MenuButton> {
           type: MaterialType.transparency,
           child: Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(_borderRadius),
+              borderRadius: BorderRadius.zero,
               color: _isHover ? widget.hoverColor : widget.color,
             ),
             child: InkWell(
@@ -50,7 +50,7 @@ class _MenuButtonState extends State<MenuButton> {
                   _isHover = val;
                 });
               },
-              borderRadius: BorderRadius.circular(_borderRadius),
+              borderRadius: BorderRadius.zero,
               splashColor: widget.splashColor,
               enableFeedback: widget.enableFeedback,
               onTap: widget.onPressed,

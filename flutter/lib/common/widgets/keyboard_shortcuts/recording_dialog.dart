@@ -388,7 +388,7 @@ class _RecordingDialogState extends State<_RecordingDialog> {
                     const EdgeInsets.symmetric(vertical: 18, horizontal: 12),
                 decoration: BoxDecoration(
                   border: Border.all(color: Theme.of(context).dividerColor),
-                  borderRadius: BorderRadius.circular(4),
+                  borderRadius: BorderRadius.zero,
                 ),
                 child: Text(
                   _formatCombo(),

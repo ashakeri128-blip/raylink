@@ -249,23 +249,23 @@ class MyTheme {
   MyTheme._();
 
   static const Color grayBg = Color(0xFFEFEFF2);
-  static const Color accent = Color(0xFF0071FF);
-  static const Color accent50 = Color(0x770071FF);
-  static const Color accent80 = Color(0xAA0071FF);
+  static const Color accent = Color(0xFF009355);
+  static const Color accent50 = Color(0x77009355);
+  static const Color accent80 = Color(0xAA009355);
   static const Color canvasColor = Color(0xFF212121);
   static const Color border = Color(0xFFCCCCCC);
-  static const Color idColor = Color(0xFF00B6F0);
+  static const Color idColor = Color(0xFF009355);
   static const Color darkGray = Color.fromARGB(255, 148, 148, 148);
   static const Color cmIdColor = Color(0xFF21790B);
   static const Color dark = Colors.black87;
-  static const Color button = Color(0xFF2C8CFF);
+  static const Color button = Color(0xFF009355);
   static const Color hoverBorder = Color(0xFF999999);
 
   // ListTile
   static const ListTileThemeData listTileTheme = ListTileThemeData(
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.all(
-        Radius.circular(5),
+        Radius.zero,
       ),
     ),
   );
@@ -285,7 +285,7 @@ class MyTheme {
     splashRadius: 0,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.all(
-        Radius.circular(5),
+        Radius.zero,
       ),
     ),
   );
@@ -300,7 +300,7 @@ class MyTheme {
     style: TextButton.styleFrom(
       padding: EdgeInsets.symmetric(horizontal: mobileTextButtonPaddingLR),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8.0),
+        borderRadius: BorderRadius.zero,
       ),
     ),
   );
@@ -372,6 +372,7 @@ class MyTheme {
   static ThemeData lightTheme = ThemeData(
     // https://stackoverflow.com/questions/77537315/after-upgrading-to-flutter-3-16-the-app-bar-background-color-button-size-and
     useMaterial3: false,
+    fontFamily: 'Lateef',
     brightness: Brightness.light,
     hoverColor: Color.fromARGB(255, 224, 224, 224),
     scaffoldBackgroundColor: Colors.white,
@@ -382,7 +383,7 @@ class MyTheme {
     dialogTheme: DialogTheme(
       elevation: 15,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(18.0),
+        borderRadius: BorderRadius.zero,
         side: BorderSide(
           width: 1,
           color: grayBg,
@@ -396,7 +397,7 @@ class MyTheme {
             filled: true,
             isDense: true,
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8),
+              borderRadius: BorderRadius.zero,
             ),
           )
         : null,
@@ -422,7 +423,7 @@ class MyTheme {
             style: TextButton.styleFrom(
               splashFactory: NoSplash.splashFactory,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18.0),
+                borderRadius: BorderRadius.zero,
               ),
             ),
           )
@@ -431,7 +432,7 @@ class MyTheme {
       style: ElevatedButton.styleFrom(
         backgroundColor: MyTheme.accent,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.0),
+          borderRadius: BorderRadius.zero,
         ),
       ),
     ),
@@ -440,7 +441,7 @@ class MyTheme {
         backgroundColor: grayBg,
         foregroundColor: Colors.black87,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.0),
+          borderRadius: BorderRadius.zero,
         ),
       ),
     ),
@@ -452,7 +453,7 @@ class MyTheme {
         style:
             MenuStyle(backgroundColor: MaterialStatePropertyAll(Colors.white))),
     colorScheme: ColorScheme.light(
-        primary: Colors.blue, secondary: accent, background: grayBg),
+        primary: Color(0xFF009355), secondary: accent, background: grayBg),
     popupMenuTheme: PopupMenuThemeData(
         color: Colors.white,
         shape: RoundedRectangleBorder(
@@ -460,7 +461,7 @@ class MyTheme {
               color: (isDesktop || isWebDesktop)
                   ? Color(0xFFECECEC)
                   : Colors.transparent),
-          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+          borderRadius: BorderRadius.all(Radius.zero),
         )),
   ).copyWith(
     extensions: <ThemeExtension<dynamic>>[
@@ -470,6 +471,7 @@ class MyTheme {
   );
   static ThemeData darkTheme = ThemeData(
     useMaterial3: false,
+    fontFamily: 'Lateef',
     brightness: Brightness.dark,
     hoverColor: Color.fromARGB(255, 45, 46, 53),
     scaffoldBackgroundColor: Color(0xFF18191E),
@@ -480,7 +482,7 @@ class MyTheme {
     dialogTheme: DialogTheme(
       elevation: 15,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(18.0),
+        borderRadius: BorderRadius.zero,
         side: BorderSide(
           width: 1,
           color: Color(0xFF24252B),
@@ -494,7 +496,7 @@ class MyTheme {
             filled: true,
             isDense: true,
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8),
+              borderRadius: BorderRadius.zero,
             ),
           )
         : null,
@@ -525,7 +527,7 @@ class MyTheme {
               disabledForegroundColor: Colors.white70,
               foregroundColor: Colors.white70,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18.0),
+                borderRadius: BorderRadius.zero,
               ),
             ),
           )
@@ -537,7 +539,7 @@ class MyTheme {
         disabledForegroundColor: Colors.white70,
         disabledBackgroundColor: Colors.white10,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.0),
+          borderRadius: BorderRadius.zero,
         ),
       ),
     ),
@@ -548,7 +550,7 @@ class MyTheme {
         disabledForegroundColor: Colors.white70,
         foregroundColor: Colors.white70,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.0),
+          borderRadius: BorderRadius.zero,
         ),
       ),
     ),
@@ -560,14 +562,14 @@ class MyTheme {
         style: MenuStyle(
             backgroundColor: MaterialStatePropertyAll(Color(0xFF121212)))),
     colorScheme: ColorScheme.dark(
-      primary: Colors.blue,
+      primary: Color(0xFF009355),
       secondary: accent,
       background: Color(0xFF24252B),
     ),
     popupMenuTheme: PopupMenuThemeData(
         shape: RoundedRectangleBorder(
       side: BorderSide(color: Colors.white24),
-      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+      borderRadius: BorderRadius.all(Radius.zero),
     )),
   ).copyWith(
     extensions: <ThemeExtension<dynamic>>[
@@ -640,7 +642,7 @@ final ButtonStyle flatButtonStyle = TextButton.styleFrom(
   minimumSize: Size(0, 36),
   padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
   shape: const RoundedRectangleBorder(
-    borderRadius: BorderRadius.all(Radius.circular(2.0)),
+    borderRadius: BorderRadius.all(Radius.zero),
   ),
 );
 
@@ -1033,7 +1035,7 @@ void showToast(String text,
               decoration: BoxDecoration(
                 color: MyTheme.color(context).toastBg,
                 borderRadius: const BorderRadius.all(
-                  Radius.circular(20),
+                  Radius.zero,
                 ),
               ),
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
@@ -3724,7 +3726,7 @@ class ComboBox extends StatelessWidget {
               : MyTheme.border,
         ),
         borderRadius:
-            BorderRadius.circular(8), //border raiuds of dropdown button
+            BorderRadius.zero, //border raiuds of dropdown button
       ),
       height: 42, // should be the height of a TextField
       child: Obx(() => DropdownButton<String>(
@@ -3970,19 +3972,11 @@ Widget buildVirtualWindowFrame(BuildContext context, Widget child) {
           color: Theme.of(context).dividerColor,
           width: stateGlobal.windowBorderWidth.value,
         ),
-        borderRadius: BorderRadius.circular(
-          (stateGlobal.fullscreen.isTrue || stateGlobal.isMaximized.isTrue)
-              ? 0
-              : kFrameBorderRadius,
-        ),
+        borderRadius: BorderRadius.zero,
         boxShadow: boxShadow(),
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(
-          (stateGlobal.fullscreen.isTrue || stateGlobal.isMaximized.isTrue)
-              ? 0
-              : kFrameClipRRectBorderRadius,
-        ),
+        borderRadius: BorderRadius.zero,
         child: child,
       ),
     ),
@@ -4316,7 +4310,7 @@ Widget? buildAvatarWidget({
 
   final radius = borderRadius ?? size / 2;
   return ClipRRect(
-    borderRadius: BorderRadius.circular(radius),
+    borderRadius: BorderRadius.zero,
     child: Image(
       image: imageProvider,
       width: size,

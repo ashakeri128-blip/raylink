@@ -159,6 +159,13 @@ flutter:
     - assets/
 
   fonts:
+    - family: Lateef
+      fonts:
+        - asset: assets/fonts/Lateef-Regular.ttf
+        - asset: assets/fonts/Lateef-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Lateef-Bold.ttf
+          weight: 700
     - family: GestureIcons
       fonts:
         - asset: assets/gestures.ttf

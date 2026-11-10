@@ -133,7 +133,7 @@ class _InstallPageBodyState extends State<_InstallPageBody>
   InkWell Option(RxBool option, {String label = ''}) {
     return InkWell(
       // todo mouseCursor: "SystemMouseCursors.forbidden" or no cursor on btnEnabled == false
-      borderRadius: BorderRadius.circular(6),
+      borderRadius: BorderRadius.zero,
       onTap: () => btnEnabled.value ? option.value = !option.value : null,
       child: Row(
         children: [
@@ -218,7 +218,7 @@ class _InstallPageBodyState extends State<_InstallPageBody>
                     color: isDarkTheme
                         ? Color.fromARGB(135, 87, 87, 90)
                         : Colors.grey[100],
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.zero,
                     border: Border.all(color: Colors.grey),
                   ),
                   child: Row(

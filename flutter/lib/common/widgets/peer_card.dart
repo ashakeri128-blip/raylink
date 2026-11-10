@@ -99,9 +99,7 @@ class _PeerCardState extends State<_PeerCard>
     var deco = Rx<BoxDecoration?>(
       BoxDecoration(
         border: Border.all(color: Colors.transparent, width: _borderWidth),
-        borderRadius: BorderRadius.circular(
-          peerCardUiType.value == PeerUiType.grid ? _cardRadius : _tileRadius,
-        ),
+        borderRadius: BorderRadius.zero,
       ),
     );
     return MouseRegion(
@@ -110,17 +108,13 @@ class _PeerCardState extends State<_PeerCard>
           border: Border.all(
               color: Theme.of(context).colorScheme.primary,
               width: _borderWidth),
-          borderRadius: BorderRadius.circular(
-            peerCardUiType.value == PeerUiType.grid ? _cardRadius : _tileRadius,
-          ),
+          borderRadius: BorderRadius.zero,
         );
       },
       onExit: (evt) {
         deco.value = BoxDecoration(
           border: Border.all(color: Colors.transparent, width: _borderWidth),
-          borderRadius: BorderRadius.circular(
-            peerCardUiType.value == PeerUiType.grid ? _cardRadius : _tileRadius,
-          ),
+          borderRadius: BorderRadius.zero,
         );
       },
       child: gestureDetector(
@@ -150,10 +144,10 @@ class _PeerCardState extends State<_PeerCard>
             decoration: BoxDecoration(
               color: str2color('${peer.id}${peer.platform}', 0x7f),
               borderRadius: isPortrait
-                  ? BorderRadius.circular(_tileRadius)
+                  ? BorderRadius.zero
                   : BorderRadius.only(
-                      topLeft: Radius.circular(_tileRadius),
-                      bottomLeft: Radius.circular(_tileRadius),
+                      topLeft: Radius.zero,
+                      bottomLeft: Radius.zero,
                     ),
             ),
             alignment: Alignment.center,
@@ -176,8 +170,8 @@ class _PeerCardState extends State<_PeerCard>
             decoration: BoxDecoration(
               color: Theme.of(context).colorScheme.background,
               borderRadius: BorderRadius.only(
-                topRight: Radius.circular(_tileRadius),
-                bottomRight: Radius.circular(_tileRadius),
+                topRight: Radius.zero,
+                bottomRight: Radius.zero,
               ),
             ),
             child: Row(
@@ -299,7 +293,7 @@ class _PeerCardState extends State<_PeerCard>
         () => Container(
           foregroundDecoration: deco.value,
           child: ClipRRect(
-            borderRadius: BorderRadius.circular(_cardRadius - _borderWidth),
+            borderRadius: BorderRadius.zero,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -1490,7 +1484,7 @@ Widget build_more(BuildContext context,
     {bool invert = false, VoidCallback? onTap}) {
   final RxBool hover = false.obs;
   final button = InkWell(
-      borderRadius: BorderRadius.circular(14),
+      borderRadius: BorderRadius.zero,
       onTap: onTap ?? () {},
       onHover: (value) => hover.value = value,
       child: Obx(() => CircleAvatar(

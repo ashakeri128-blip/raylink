@@ -920,7 +920,7 @@ class _MouseBodyState extends State<MouseBody> {
                                       ? _kTapDownColor
                                       : _kDefaultColor,
                                   borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(22 * s)),
+                                      topLeft: Radius.zero),
                                 ),
                                 margin: EdgeInsets.only(right: 0.5 * s),
                               ),
@@ -968,7 +968,7 @@ class _MouseBodyState extends State<MouseBody> {
                                       ? _kTapDownColor
                                       : _kDefaultColor,
                                   borderRadius: BorderRadius.only(
-                                      topRight: Radius.circular(22 * s)),
+                                      topRight: Radius.zero),
                                 ),
                                 margin: EdgeInsets.only(left: 0.5 * s),
                               ),
@@ -989,8 +989,8 @@ class _MouseBodyState extends State<MouseBody> {
                           decoration: BoxDecoration(
                             color: Colors.grey.withOpacity(0.7),
                             borderRadius: BorderRadius.vertical(
-                              top: Radius.circular(12 * s),
-                              bottom: Radius.circular(16 * s),
+                              top: Radius.zero,
+                              bottom: Radius.zero,
                             ),
                           ),
                           padding: EdgeInsets.symmetric(vertical: 2 * s),
@@ -1153,8 +1153,8 @@ class DragAreaTopIndentPainter extends CustomPainter {
     final rect = Rect.fromLTWH(0, 0, size.width, size.height);
     final rrect = RRect.fromRectAndCorners(
       rect,
-      bottomLeft: Radius.circular(40 * scale),
-      bottomRight: Radius.circular(40 * scale),
+      bottomLeft: Radius.zero,
+      bottomRight: Radius.zero,
     );
     canvas.drawRRect(rrect, paint);
     // Use BlendMode.dstOut to carve a smaller semicircular notch at the top center

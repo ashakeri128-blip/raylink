@@ -245,7 +245,7 @@ class _FloatingWheelState extends State<FloatingWheel> {
               _stopScrollTimer();
             },
             () => _isUpDown,
-            BorderRadius.vertical(top: Radius.circular(_wheelWidth * 0.5)),
+            BorderRadius.vertical(top: Radius.zero),
             Icons.keyboard_arrow_up,
           ),
           Listener(
@@ -330,7 +330,7 @@ class _FloatingWheelState extends State<FloatingWheel> {
               _stopScrollTimer();
             },
             () => _isDownDown,
-            BorderRadius.vertical(bottom: Radius.circular(_wheelWidth * 0.5)),
+            BorderRadius.vertical(bottom: Radius.zero),
             Icons.keyboard_arrow_down,
           ),
         ],
@@ -542,7 +542,7 @@ class _FloatingLeftRightButtonState extends State<FloatingLeftRightButton> {
           width: w,
           height: h,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(_kLeftRightButtonWidth * 0.225),
+            borderRadius: BorderRadius.zero,
             color: Colors.white,
           ),
         ),
@@ -658,9 +658,9 @@ class _FloatingLeftRightButtonState extends State<FloatingLeftRightButton> {
                 width: _kBorderWidth),
             borderRadius: _isLeft
                 ? BorderRadius.horizontal(
-                    left: Radius.circular(_kLeftRightButtonHeight * 0.5))
+                    left: Radius.zero)
                 : BorderRadius.horizontal(
-                    right: Radius.circular(_kLeftRightButtonHeight * 0.5)),
+                    right: Radius.zero),
           ),
           child: _buildButtonIcon(),
         ),

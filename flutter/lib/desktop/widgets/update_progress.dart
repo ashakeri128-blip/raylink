@@ -296,7 +296,7 @@ class UpdateProgressState extends State<UpdateProgress> {
     return LinearProgressIndicator(
       value: getValue(),
       minHeight: 20,
-      borderRadius: BorderRadius.circular(5),
+      borderRadius: BorderRadius.zero,
       backgroundColor: Colors.grey[300],
       valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
     );

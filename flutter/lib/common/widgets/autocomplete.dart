@@ -319,8 +319,8 @@ class AutocompletePeerTileState extends State<AutocompletePeerTile> {
                           color: str2color(
                               '${widget.peer.id}${widget.peer.platform}', 0x7f),
                           borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(tileRadius),
-                            bottomLeft: Radius.circular(tileRadius),
+                            topLeft: Radius.zero,
+                            bottomLeft: Radius.zero,
                           ),
                         ),
                         alignment: Alignment.center,
@@ -336,8 +336,8 @@ class AutocompletePeerTileState extends State<AutocompletePeerTile> {
                           decoration: BoxDecoration(
                             color: Theme.of(context).colorScheme.background,
                             borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(tileRadius),
-                              bottomRight: Radius.circular(tileRadius),
+                              topRight: Radius.zero,
+                              bottomRight: Radius.zero,
                             ),
                           ),
                           child: Row(

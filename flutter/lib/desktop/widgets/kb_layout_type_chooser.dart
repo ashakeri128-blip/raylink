@@ -38,7 +38,7 @@ class _KBImage extends StatelessWidget {
     return Obx(() {
       return Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(_kBorderRadius),
+          borderRadius: BorderRadius.zero,
           border: Border.all(
             color: chosenType.value == kbLayoutType
                 ? _kImageBorderColor

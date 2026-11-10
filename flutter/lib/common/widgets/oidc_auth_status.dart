@@ -147,7 +147,7 @@ class _OidcAuthFallbackState extends State<_OidcAuthFallback> {
       padding: const EdgeInsets.symmetric(horizontal: _messageActionSpacing),
       decoration: BoxDecoration(
         border: Border.all(color: Theme.of(context).dividerColor),
-        borderRadius: BorderRadius.circular(_statusSpacing),
+        borderRadius: BorderRadius.zero,
       ),
       child: _expanded
           ? SelectableText(widget.authUrl, style: urlStyle)

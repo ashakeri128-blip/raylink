@@ -162,7 +162,7 @@ Alignment _alignmentForEdge(_ToolbarEdge edge, double fraction) {
 // The drag handle hangs off the side of the toolbar facing away from the
 // docked edge, so the icons themselves sit flush against that edge.
 BorderRadius _collapseHandleBorderRadius(_ToolbarEdge edge) {
-  const r = Radius.circular(5);
+  const r = Radius.zero;
   switch (edge) {
     case _ToolbarEdge.top:
       return const BorderRadius.vertical(bottom: r);
@@ -363,7 +363,7 @@ class _ToolbarTheme {
         )),
         shape: MaterialStatePropertyAll(RoundedRectangleBorder(
             borderRadius:
-                BorderRadius.circular(_ToolbarTheme.menuBorderRadius))),
+                BorderRadius.zero)),
         padding: MaterialStateProperty.all(_ToolbarTheme.menuPadding),
       );
   static final defaultMenuButtonStyle = ButtonStyle(
@@ -755,7 +755,7 @@ class _RemoteToolbarState extends State<RemoteToolbar> {
         height: previewSize.height,
         decoration: BoxDecoration(
           color: color.withOpacity(0.10),
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.zero,
           border: Border.all(color: color.withOpacity(0.55), width: 1.5),
         ),
       ),
@@ -852,7 +852,7 @@ class _RemoteToolbarState extends State<RemoteToolbar> {
     }
     if (!isWeb) toolbarItems.add(_RecordMenu());
     toolbarItems.add(_CloseMenu(id: widget.id, ffi: widget.ffi));
-    final toolbarBorderRadius = BorderRadius.all(Radius.circular(4.0));
+    final toolbarBorderRadius = BorderRadius.all(Radius.zero);
     // innerAxis: how the toolbar icons themselves flow.
     // outerAxis: how the toolbar block and the handle stack against each other
     // (perpendicular to the dock edge, so the handle hangs off the interior face).
@@ -913,7 +913,7 @@ class _RemoteToolbarState extends State<RemoteToolbar> {
           ),
           shape: MaterialStatePropertyAll(RoundedRectangleBorder(
               borderRadius:
-                  BorderRadius.circular(_ToolbarTheme.menuButtonBorderRadius))),
+                  BorderRadius.zero)),
         ),
       ),
       dividerTheme: DividerThemeData(
@@ -2187,7 +2187,7 @@ class _RectValueThumbShape extends SliderComponentShape {
 
     final RRect rrect = RRect.fromRectAndRadius(
       Rect.fromCenter(center: center, width: width, height: height),
-      Radius.circular(radius),
+      Radius.zero,
     );
     final Paint paint = Paint()..color = fillColor;
     canvas.drawRRect(rrect, paint);
@@ -3083,7 +3083,7 @@ class _IconMenuButtonState extends State<_IconMenuButton> {
                 child: Ink(
                     decoration: BoxDecoration(
                       borderRadius:
-                          BorderRadius.circular(_ToolbarTheme.iconRadius),
+                          BorderRadius.zero,
                       color: hover ? widget.hoverColor : widget.color,
                     ),
                     child: icon)),
@@ -3166,7 +3166,7 @@ class _IconSubmenuButtonState extends State<_IconSubmenuButton> {
                     child: Ink(
                         decoration: BoxDecoration(
                           borderRadius:
-                              BorderRadius.circular(_ToolbarTheme.iconRadius),
+                              BorderRadius.zero,
                           color: hover ? widget.hoverColor : widget.color,
                         ),
                         child: icon))),

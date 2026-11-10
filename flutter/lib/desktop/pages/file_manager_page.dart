@@ -204,7 +204,7 @@ class _FileManagerPageState extends State<FileManagerPage>
       decoration: BoxDecoration(
         color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.all(
-          Radius.circular(15.0),
+          Radius.zero,
         ),
       ),
       child: child,
@@ -314,7 +314,7 @@ class _FileManagerPageState extends State<FileManagerPage>
                                       ),
                                     ),
                                   ),
-                                  barRadius: Radius.circular(15),
+                                  barRadius: Radius.zero,
                                   percent: item.percent,
                                   progressColor: MyTheme.accent,
                                   backgroundColor: Theme.of(context).hoverColor,
@@ -564,7 +564,7 @@ class _FileManagerViewState extends State<FileManagerView> {
                           width: 50,
                           height: 50,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                            borderRadius: BorderRadius.all(Radius.zero),
                             color: MyTheme.accent,
                           ),
                           padding: EdgeInsets.all(8.0),
@@ -643,7 +643,7 @@ class _FileManagerViewState extends State<FileManagerView> {
                     decoration: BoxDecoration(
                       color: Theme.of(context).cardColor,
                       borderRadius: BorderRadius.all(
-                        Radius.circular(8.0),
+                        Radius.zero,
                       ),
                     ),
                     child: Padding(
@@ -1198,7 +1198,7 @@ class _FileManagerViewState extends State<FileManagerView> {
                       ? MyTheme.button
                       : Theme.of(context).cardColor,
                   borderRadius: BorderRadius.all(
-                    Radius.circular(5.0),
+                    Radius.zero,
                   ),
                   border: rightClickEntry.value == entry
                       ? Border.all(

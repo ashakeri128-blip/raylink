@@ -545,7 +545,7 @@ class _WidgetOPState extends State<WidgetOP> {
                             horizontal: 8.0, vertical: 6.0),
                         decoration: BoxDecoration(
                           color: bgColor,
-                          borderRadius: BorderRadius.circular(4.0),
+                          borderRadius: BorderRadius.zero,
                         ),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
@@ -958,7 +958,7 @@ Future<bool?> _openLoginDialog() async {
             ),
             onTap: onDialogCancel,
             hoverColor: Colors.red,
-            borderRadius: BorderRadius.circular(5),
+            borderRadius: BorderRadius.zero,
           ),
         ).marginOnly(top: 10, right: 15),
       ],
